@@ -34,5 +34,5 @@ Route::group(['prefix' => 'customer'], function() {
     Route::post('/', 'CustomerController@save');
     Route::get('/{id}', 'CustomerController@edit');
     Route::put('/{id}', 'CustomerController@update');
-    Route::delete('/{id}', 'CustomerController@delete');
+    Route::delete('/{id}', 'CustomerController@destroy');
 });
