@@ -28,7 +28,7 @@
                                     <th>No Telp</th>
                                     <th>Alamat</th>
                                     <th>Email</th>
-                                    <th>Aksi</th>
+                                    <th colspan="2">Aksi</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -44,6 +44,13 @@
                                             <input type="hidden" name="_method" value="DELETE" class="form-control">
                                             <a href="{{ url('/customer/' . $customer->id) }}" class="btn btn-warning btn-sm">Edit</a>
                                             <button class="btn btn-danger btn-sm">Hapus</button>
+                                        </form>
+                                    </td>
+                                    <td>
+                                        <form action="{{ route('invoice.store') }}" method="post">
+                                            @csrf
+                                            <input type="hidden" name="customer_id" value="{{ $customer->id }}" class="form-control">
+                                            <button class="btn btn-primary btn-sm">Create Invoice</button>
                                         </form>
                                     </td>
                                 </tr>

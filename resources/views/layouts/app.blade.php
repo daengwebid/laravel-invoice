@@ -40,6 +40,9 @@
                     <ul class="navbar-nav ml-auto">
                         <!-- Authentication Links -->
                         <li class="nav-item">
+                            <a href="{{ route('invoice.create') }}" class="nav-link">Buat Invoice</a>
+                        </li>
+                        <li class="nav-item">
                             <a href="{{ url('/customer') }}" class="nav-link">Manajemen Pelanggan</a>
                         </li>
                         <li class="nav-item">
