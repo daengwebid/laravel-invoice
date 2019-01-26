@@ -50,7 +50,7 @@
                                         <form action="{{ route('invoice.store') }}" method="post">
                                             @csrf
                                             <input type="hidden" name="customer_id" value="{{ $customer->id }}" class="form-control">
-                                            <button class="btn btn-primary btn-sm">Create Invoice</button>
+                                            <button class="btn btn-primary btn-sm">Buat Invoice</button>
                                         </form>
                                     </td>
                                 </tr>

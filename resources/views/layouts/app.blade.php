@@ -39,15 +39,6 @@
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
                         <!-- Authentication Links -->
-                        <li class="nav-item">
-                            <a href="{{ route('invoice.create') }}" class="nav-link">Buat Invoice</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="{{ url('/customer') }}" class="nav-link">Manajemen Pelanggan</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="{{ url('/product') }}" class="nav-link">Manajemen Produk</a>
-                        </li>
                         @guest
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
@@ -58,6 +49,18 @@
                                 @endif
                             </li>
                         @else
+                            <li class="nav-item">
+                                <a href="{{ route('invoice.create') }}" class="nav-link">Buat Invoice</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{ route('invoice.index') }}" class="nav-link">List Invoice</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{ url('/customer') }}" class="nav-link">Manajemen Pelanggan</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{ url('/product') }}" class="nav-link">Manajemen Produk</a>
+                            </li>
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }} <span class="caret"></span>

@@ -35,7 +35,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="">Email</label>
-                                <input type="number" name="email" class="form-control {{ $errors->has('email') ? 'is-invalid':'' }}" value="{{ $customer->email }}" readonly>
+                                <input type="email" name="email" class="form-control {{ $errors->has('email') ? 'is-invalid':'' }}" value="{{ $customer->email }}" readonly>
                                 <p class="text-danger">{{ $errors->first('email') }}</p>
                             </div>
                             <div class="form-group">
