@@ -7,6 +7,7 @@ use App\Customer;
 use App\Invoice;
 use App\Product;
 use App\Invoice_detail;
+use PDF;
 
 class InvoiceController extends Controller
 {
@@ -90,5 +91,12 @@ class InvoiceController extends Controller
         $invoice = Invoice::find($id);
         $invoice->delete();
         return redirect()->back()->with(['success' => 'Data telah dihapus']);
+    }
+
+    public function generateInvoice($id)
+    {
+        $invoice = Invoice::with(['customer', 'detail', 'detail.product'])->find($id);
+        $pdf = PDF::loadView('invoice.print', compact('invoice'))->setPaper('a4', 'landscape');
+        return $pdf->stream();
     }
 }
